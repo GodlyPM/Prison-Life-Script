@@ -1,0 +1,108 @@
+-- Objects
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local button1 = Instance.new("TextButton")
+local button2 = Instance.new("TextButton")
+local TextLabel_3 = Instance.new("TextLabel")
+
+-- Properties
+
+ScreenGui.Parent = game.CoreGui
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.new(0.596078, 0.596078, 0.596078)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.0819366872, 0, 0.225296468, 0)
+Frame.Size = UDim2.new(0, 258, 0, 188)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.new(0.596078, 0.596078, 0.596078)
+TextLabel.BorderSizePixel = 0
+TextLabel.Size = UDim2.new(0, 258, 0, 32)
+TextLabel.Font = Enum.Font.SciFi
+TextLabel.FontSize = Enum.FontSize.Size14
+TextLabel.Text = "Adopt Me Gui"
+TextLabel.TextColor3 = Color3.new(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14
+TextLabel.TextWrapped = true
+
+TextLabel_2.Parent = Frame
+TextLabel_2.BackgroundColor3 = Color3.new(0.596078, 0.596078, 0.596078)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0, 0, 0.941489339, 0)
+TextLabel_2.Size = UDim2.new(0, 258, 0, 32)
+TextLabel_2.Font = Enum.Font.SciFi
+TextLabel_2.FontSize = Enum.FontSize.Size14
+TextLabel_2.Text = "Made By Fuzion_Sam"
+TextLabel_2.TextColor3 = Color3.new(0, 0, 0)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14
+TextLabel_2.TextWrapped = true
+
+button1.Name = "button1"
+button1.Parent = Frame
+button1.BackgroundColor3 = Color3.new(0.490196, 0.490196, 0.490196)
+button1.BorderSizePixel = 0
+button1.Position = UDim2.new(0.112403102, 0, 0.212765962, 0)
+button1.Size = UDim2.new(0, 200, 0, 50)
+button1.Font = Enum.Font.Code
+button1.FontSize = Enum.FontSize.Size14
+button1.Text = "Tp to Obby"
+button1.TextColor3 = Color3.new(0, 0, 0)
+button1.TextScaled = true
+button1.TextSize = 14
+button1.TextWrapped = true
+
+button2.Name = "button2"
+button2.Parent = Frame
+button2.BackgroundColor3 = Color3.new(0.490196, 0.490196, 0.490196)
+button2.BorderSizePixel = 0
+button2.Position = UDim2.new(0.112403102, 0, 0.606382966, 0)
+button2.Size = UDim2.new(0, 200, 0, 50)
+button2.Font = Enum.Font.Code
+button2.FontSize = Enum.FontSize.Size14
+button2.Text = "Noclip"
+button2.TextColor3 = Color3.new(0, 0, 0)
+button2.TextScaled = true
+button2.TextSize = 14
+button2.TextWrapped = true
+
+TextLabel_3.Parent = Frame
+TextLabel_3.BackgroundColor3 = Color3.new(0.596078, 0.596078, 0.596078)
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.Position = UDim2.new(0, 0, 1.11170208, 0)
+TextLabel_3.Size = UDim2.new(0, 258, 0, 35)
+TextLabel_3.Font = Enum.Font.Code
+TextLabel_3.FontSize = Enum.FontSize.Size14
+TextLabel_3.Text = "To use noclip hit X on your keyboard "
+TextLabel_3.TextColor3 = Color3.new(0, 0, 0)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14
+TextLabel_3.TextWrapped = true
+
+button1.MouseButton1Click:connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-539, 18, -1388) + Vector3.new(1,0,0)
+end)
+button2.MouseButton1Click:connect(function()
+	noclip = false
+game:GetService('RunService').Stepped:connect(function()
+if noclip then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+mouse.KeyDown:connect(function(key)
+
+if key == "x" then
+noclip = not noclip
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+print('NoClip Loaded')
+print('Press "X" to noclip')
+end)
