@@ -1,0 +1,198 @@
+-- Made By: Colyn#9406
+local ScreenGui = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local BAR = Instance.new("TextButton")
+local BLOOD = Instance.new("TextButton")
+local DiscordLogo = Instance.new("ImageLabel")
+local Discordname = Instance.new("TextLabel")
+local MiddleBar = Instance.new("TextButton")
+local FERRY = Instance.new("TextButton")
+local DIRT = Instance.new("TextButton")
+local LuminousHub = Instance.new("TextLabel")
+local DESTINYHUB = Instance.new("TextButton")
+local openmain = Instance.new("Frame")
+local open = Instance.new("TextButton")
+local close = Instance.new("TextButton")
+local destroy = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+
+main.Name = "main"
+main.Parent = ScreenGui
+main.BackgroundColor3 = Color3.new(0.258824, 0.258824, 0.258824)
+main.Position = UDim2.new(0.200493515, 0, 0.185944349, 0)
+main.Size = UDim2.new(0, 657, 0, 412)
+main.Visible = false
+main.Active = true
+main.Draggable = true
+
+BAR.Name = "BAR"
+BAR.Parent = main
+BAR.BackgroundColor3 = Color3.new(0.164706, 0.164706, 0.164706)
+BAR.BorderSizePixel = 0
+BAR.Position = UDim2.new(0, 34, 0, 39)
+BAR.Selectable = false
+BAR.Size = UDim2.new(0, 588, 0, 328)
+BAR.AutoButtonColor = false
+BAR.Font = Enum.Font.SourceSans
+BAR.Text = ""
+BAR.TextColor3 = Color3.new(0, 0, 0)
+BAR.TextSize = 14
+
+BLOOD.Name = "BLOOD"
+BLOOD.Parent = BAR
+BLOOD.BackgroundColor3 = Color3.new(0.631373, 0.631373, 0.631373)
+BLOOD.BorderSizePixel = 0
+BLOOD.Position = UDim2.new(0.0480635501, 0, 0.307612062, 0)
+BLOOD.Size = UDim2.new(0, 200, 0, 50)
+BLOOD.Font = Enum.Font.Cartoon
+BLOOD.Text = "BLOOD"
+BLOOD.TextColor3 = Color3.new(1, 0.886275, 0)
+BLOOD.TextSize = 36
+BLOOD.MouseButton1Down:connect(function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/aFBEUkWM'),true))()
+end)
+
+DiscordLogo.Name = "Discord Logo"
+DiscordLogo.Parent = BAR
+DiscordLogo.BackgroundColor3 = Color3.new(1, 1, 1)
+DiscordLogo.BorderColor3 = Color3.new(1, 1, 1)
+DiscordLogo.Position = UDim2.new(0.610707402, 0, 0.0609756112, 0)
+DiscordLogo.Size = UDim2.new(0, 200, 0, 109)
+DiscordLogo.Image = "rbxassetid://4499226203"
+
+Discordname.Name = "Discord name"
+Discordname.Parent = BAR
+Discordname.BackgroundColor3 = Color3.new(0.631373, 0.631373, 0.631373)
+Discordname.BackgroundTransparency = 1
+Discordname.BorderSizePixel = 0
+Discordname.Position = UDim2.new(0.610707402, 0, 0.393292725, 0)
+Discordname.Size = UDim2.new(0, 200, 0, 33)
+Discordname.Font = Enum.Font.Cartoon
+Discordname.Text = "Colyn#9406"
+Discordname.TextColor3 = Color3.new(1, 0.886275, 0)
+Discordname.TextSize = 14
+
+MiddleBar.Name = "MiddleBar"
+MiddleBar.Parent = BAR
+MiddleBar.BackgroundColor3 = Color3.new(0.258824, 0.258824, 0.258824)
+MiddleBar.BorderSizePixel = 0
+MiddleBar.Position = UDim2.new(0, 127, 0, 129)
+MiddleBar.Rotation = 90
+MiddleBar.Selectable = false
+MiddleBar.Size = UDim2.new(0, 331, 0, 69)
+MiddleBar.AutoButtonColor = false
+MiddleBar.Font = Enum.Font.SourceSans
+MiddleBar.Text = ""
+MiddleBar.TextColor3 = Color3.new(0, 0, 0)
+MiddleBar.TextSize = 14
+
+FERRY.Name = "FERRY"
+FERRY.Parent = BAR
+FERRY.BackgroundColor3 = Color3.new(0.631373, 0.631373, 0.631373)
+FERRY.BorderSizePixel = 0
+FERRY.Position = UDim2.new(0.0452064276, 0, 0.542246163, 0)
+FERRY.Size = UDim2.new(0, 200, 0, 50)
+FERRY.Font = Enum.Font.Cartoon
+FERRY.Text = "FERRY"
+FERRY.TextColor3 = Color3.new(1, 0.886275, 0)
+FERRY.TextSize = 36
+FERRY.MouseButton1Down:connect(function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/Cs6HzAbB'),true))()
+end)
+
+DIRT.Name = "DIRT"
+DIRT.Parent = BAR
+DIRT.BackgroundColor3 = Color3.new(0.631373, 0.631373, 0.631373)
+DIRT.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+DIRT.BorderSizePixel = 0
+DIRT.Position = UDim2.new(0.0466805361, 0, 0.0628647655, 0)
+DIRT.Size = UDim2.new(0, 200, 0, 50)
+DIRT.Font = Enum.Font.Cartoon
+DIRT.Text = "DIRT 3.0"
+DIRT.TextColor3 = Color3.new(1, 0.886275, 0)
+DIRT.TextSize = 36
+DIRT.MouseButton1Down:connect(function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/NTzFC9u9'),true))()
+end)
+
+LuminousHub.Name = "Luminous Hub"
+LuminousHub.Parent = BAR
+LuminousHub.BackgroundColor3 = Color3.new(1, 1, 1)
+LuminousHub.BackgroundTransparency = 1
+LuminousHub.BorderSizePixel = 0
+LuminousHub.Position = UDim2.new(0.328231305, 0, -0.118902445, 0)
+LuminousHub.Size = UDim2.new(0, 200, 0, 34)
+LuminousHub.Font = Enum.Font.Cartoon
+LuminousHub.Text = "Luminous Hub"
+LuminousHub.TextColor3 = Color3.new(1, 0.533333, 0)
+LuminousHub.TextSize = 36
+
+DESTINYHUB.Name = "DESTINY HUB"
+DESTINYHUB.Parent = BAR
+DESTINYHUB.BackgroundColor3 = Color3.new(0.631373, 0.631373, 0.631373)
+DESTINYHUB.BorderSizePixel = 0
+DESTINYHUB.Position = UDim2.new(0.04829932, 0, 0.78536588, 0)
+DESTINYHUB.Size = UDim2.new(0, 200, 0, 50)
+DESTINYHUB.Font = Enum.Font.Cartoon
+DESTINYHUB.Text = "DESTINY"
+DESTINYHUB.TextColor3 = Color3.new(1, 0.886275, 0)
+DESTINYHUB.TextSize = 36
+DESTINYHUB.MouseButton1Down:connect(function()
+loadstring(game:HttpGet(('https://pastebin.com/raw/pTLtZ93z'),true))()
+end)
+
+close.Name = "close"
+close.Parent = BAR
+close.BackgroundColor3 = Color3.new(0.631373, 0.631373, 0.631373)
+close.BorderSizePixel = 0
+close.Position = UDim2.new(0.610707283, 0, 0.783927321, 0)
+close.Size = UDim2.new(0, 200, 0, 50)
+close.Font = Enum.Font.Cartoon
+close.Text = "CLOSE"
+close.TextColor3 = Color3.new(1, 0.886275, 0)
+close.TextSize = 36
+close.MouseButton1Down:connect(function()
+main.Visible = false
+openmain.Visible = true
+end)
+
+destroy.Name = "destroy"
+destroy.Parent = BAR
+destroy.BackgroundColor3 = Color3.new(0.631373, 0.631373, 0.631373)
+destroy.BorderSizePixel = 0
+destroy.Position = UDim2.new(0.610707283, 0, 0.540024877, 0)
+destroy.Size = UDim2.new(0, 200, 0, 50)
+destroy.Font = Enum.Font.Cartoon
+destroy.Text = "DESTROY"
+destroy.TextColor3 = Color3.new(1, 0.886275, 0)
+destroy.TextSize = 36
+destroy.MouseButton1Down:connect(function()
+ScreenGui:Destroy()
+end)
+
+openmain.Name = "openmain"
+openmain.Parent = ScreenGui
+openmain.BackgroundColor3 = Color3.new(0.631373, 0.631373, 0.631373)
+openmain.BorderSizePixel = 0
+openmain.Position = UDim2.new(0.0117211593, 0, 0.405563682, 0)
+openmain.Size = UDim2.new(0, 172, 0, 58)
+openmain.Active = true
+openmain.Draggable = true
+
+open.Name = "open"
+open.Parent = openmain
+open.BackgroundColor3 = Color3.new(0.631373, 0.631373, 0.631373)
+open.BorderSizePixel = 0
+open.Position = UDim2.new(0, 0, 0.0172413588, 0)
+open.Size = UDim2.new(0, 172, 0, 57)
+open.Font = Enum.Font.Cartoon
+open.Text = "OPEN"
+open.TextColor3 = Color3.new(1, 0.886275, 0)
+open.TextSize = 36
+open.MouseButton1Down:connect(function()
+openmain.Visible = false
+main.Visible = true
+end)

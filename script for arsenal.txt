@@ -1,0 +1,155 @@
+local Intro = Instance.new("ScreenGui")
+local TextLabel = Instance.new("TextLabel")
+Intro.Name = "Intro"
+Intro.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Intro.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TextLabel.Parent = Intro
+TextLabel.BackgroundColor3 = Color3.new(0, 0, 0)
+TextLabel.BackgroundTransparency = 1
+TextLabel.Size = UDim2.new(1, 0, 1, 0)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = "Script Created By: Lyon#4054\nJoin My Discord For More Script: https://discord.gg/hkmWFGn"
+TextLabel.TextColor3 = Color3.new(1, 1, 1)
+TextLabel.TextSize = 40
+TextLabel.TextTransparency = 1
+
+local TweenService = game:GetService("TweenService");
+local Blur = Instance.new("BlurEffect", game:GetService("Lighting"))
+Blur.Size = 0;
+local BlurTween = {};
+BlurTween[0] = TweenService:Create(Blur, TweenInfo.new(1), {Size = 24});
+BlurTween[1] = TweenService:Create(Blur, TweenInfo.new(1), {Size = 0});
+local TextLabelTween = {};
+TextLabelTween[0] = TweenService:Create(TextLabel, TweenInfo.new(1), {
+	BackgroundTransparency = 0.2, 
+	TextTransparency = 0,
+	TextStrokeTransparency = 0
+});
+TextLabelTween[1] = TweenService:Create(TextLabel, TweenInfo.new(1), {
+	BackgroundTransparency = 1, 
+	TextTransparency = 1,
+	TextStrokeTransparency = 1
+});
+
+BlurTween[0]:Play();
+TextLabelTween[0]:Play();
+wait(8)
+BlurTween[1]:Play();
+TextLabelTween[1]:Play();
+wait(1)
+Intro:Remove();
+
+
+if not _G.AntiCheatBypass then
+	local mt = getrawmetatable(game);
+	local old = mt.__namecall
+
+	local rstorage = game:GetService("ReplicatedStorage");
+	local Events = rstorage.Events;
+	local FallDamage = Events.FallDamage;
+	local Kick = Events.Kick;
+	local HitPart = Events.HitPart;
+	local BeanBoozled = rstorage.BeanBoozled;
+	local Client = game:GetService("Players").LocalPlayer.PlayerGui.GUI.Client;
+	local sClient = game:GetService("StarterGui").GUI.Client;
+	local BanBoi = game:GetService("Players").LocalPlayer.PlayerGui.BanBoi.Ban;
+	local sBanBoi = game:GetService("StarterGui").BanBoi.Ban;
+	local FallDamage = rstorage.Events.FallDamage;
+	local GetItems = rstorage.Events.GetItems;
+	local Empty = rstorage.Events.empty
+
+
+	newcclosure = newcclosure or (function(f) return f end)
+
+	make_writeable(mt, false);
+
+	mt.__namecall = newcclosure(function(self,...)
+		local args = {...}
+		local method = args[#args]
+		
+		if (self == FallDamage and method:find('FireServer')) then 
+			return wait(9e9);
+		end
+		
+		if (self == Kick or self == FallDamage) and string.lower(method) == 'fireserver' then 
+			print(self, ...)
+			return wait(9e9);
+		end
+		if self == HitPart and string.lower(method) == 'fireserver' then
+			if args[1] == "ban" then
+				print(self, ...)
+				return wait(9e9);
+			else 
+				return old(self, ...);
+			end
+		end
+		if self == BeanBoozled and string.lower(method) == 'fireserver' then
+			return wait(9e9);
+		end
+		if (self == Client or self == BanBoi or self == sClient or self == sBanBoi) and string.lower(method) == 'destroy' then
+			return wait(9e9)
+		end
+
+		return old(self, ...)
+	end)
+	_G.AntiCheatBypass = true;
+end
+
+
+local rstorage = game:GetService("ReplicatedStorage");
+local mods = {
+	Ammo = 1000000,
+	Auto = true,
+	Bullets = 4,
+	Chamber = false,
+	DMG = 1000000,
+	EquipTime = 0,
+	Falloff = 0,
+	FireRate = 0.011,
+	MaxSpread = 15,
+	Rampup = 0,
+	Range = 1000000,
+	RecoilControl = 0,
+	ReloadTime = 0,
+	["Speed%"] = -100,
+	Spread = 15,
+	SpreadRecovery = 1.25,
+	StoredAmmo = 1000000,
+	Offset = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+}
+
+for _,b in next, rstorage.Weapons:GetChildren() do 
+	for i,v in next, mods do
+		if typeof(b:FindFirstChild(i)) == "Instance" then 
+			b:FindFirstChild(i).Value = v;
+		end
+	end
+end
+
+local clone = rstorage.Weapons:FindFirstChild("Rocket Launcher"):Clone();
+clone.Parent = game:GetService("Players").LocalPlayer;
+local rpg = rstorage.Weapons:FindFirstChild("RPG"):Clone();
+rpg.Parent = game:GetService("Players").LocalPlayer;
+
+for i,v in next, rstorage.Weapons:GetChildren() do 
+	if v.Name == "Knife" or v.Name == "Golden Knife" or v.Name == "Battle Axe" or v.Name == "Persian Sword" then 
+		for a,b in next, clone:GetChildren() do 
+			if v:FindFirstChild(b.Name) then v:FindFirstChild(b.Name):Remove(); end
+			b:Clone().Parent = v;
+		end
+	end
+	if v.Name == "Sword" then
+		for a,b in next, rpg:GetChildren() do
+			if v:FindFirstChild(b.Name) then v:FindFirstChild(b.Name):Remove(); end
+			b:Clone().Parent = v;
+		end
+	end
+end
+clone:Remove();
+rpg:Remove();
+
+local rstorage = game:GetService("ReplicatedStorage");
+for i,v in next, rstorage.Levels:GetChildren() do 
+	v.Value = "Rocket Launcher"
+end
